@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { ButtonLink, Section } from '@/components/ui';
 
 const freeProgramMailto =
@@ -10,7 +9,7 @@ export default function Home() {
       <header className="sticky top-0 z-20 border-b border-ink/10 bg-canvas/90 backdrop-blur">
         <nav className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-6 py-4">
           <a href="#top" className="inline-flex items-center gap-3 text-lg font-semibold tracking-wide">
-            <Image src="/logopic/quantum-motion-logo.png" alt="Quantum Motion logo" width={36} height={36} className="rounded-full" />
+            <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-ink text-canvas text-sm font-bold">QM</span>
             <span>Quantum Motion</span>
           </a>
           <div className="flex flex-wrap items-center gap-2 text-sm sm:gap-6">
@@ -34,14 +33,12 @@ export default function Home() {
               <ButtonLink href="https://instagram.com/tobeadded" variant="secondary">Message us on Instagram</ButtonLink>
             </div>
           </div>
-          <Image
-            src="/logopic/quantum-motion-thumbnail-banner.png"
-            alt="Quantum Motion thumbnail"
-            width={1200}
-            height={630}
-            className="w-full rounded-3xl border border-ink/10 bg-white object-cover shadow-soft"
-            priority
-          />
+          <div className="w-full rounded-3xl border border-ink/10 bg-white p-10 shadow-soft">
+            <div className="rounded-2xl border border-dashed border-ink/20 bg-canvas p-8 text-center">
+              <p className="text-2xl font-semibold">Quantum Motion</p>
+              <p className="mt-2 text-soft">Brand visual placeholder</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -49,16 +46,62 @@ export default function Home() {
         <p className="max-w-4xl text-lg leading-relaxed text-soft">Many people want to train again but feel stuck between pain, stiffness, and uncertainty. You may be worried about doing the wrong exercise, overwhelmed by random advice, or tired of starting and stopping. Quantum Motion is here to support you with clear structure, guided progress, and a plan that helps you move with more confidence.</p>
       </Section>
 
-      <Section id="method" title="Strength, mobility, and support — built around you">
-        <div className="grid gap-5 sm:grid-cols-2">{[['Gym Training', 'Build strength with progressive, realistic training plans.'], ['Mobility', 'Improve how your body moves, feels, and performs.'], ['Pain-aware coaching', 'Adapt training around discomfort, limitations, and confidence levels.'], ['Mental support', 'Stay consistent with guidance, clarity, and emotional support when motivation drops.']].map(([title, desc]) => (<article key={title} className="rounded-2xl border border-ink/10 bg-white p-6 shadow-soft transition hover:-translate-y-1"><h3 className="text-xl font-semibold">{title}</h3><p className="mt-2 text-soft">{desc}</p></article>))}</div>
+      <Section id="method" title="Simple, remote, and personal">
+        <div className="grid gap-5 md:grid-cols-3">
+          {[
+            ['1. Tell us who you are', 'You share your goals, pain points, training level, lifestyle, and current limitations.'],
+            ['2. Get your first 7-day program', 'You receive a simple tailored free program to start moving, training, and understanding the Quantum Motion method.'],
+            ['3. Continue with 1:1 coaching', 'If it feels right, we build a personalized remote coaching plan around your body, goals, and lifestyle.'],
+          ].map(([title, desc]) => (
+            <article key={title} className="rounded-2xl border border-ink/10 bg-white p-7 shadow-soft">
+              <h3 className="text-[2rem] font-semibold leading-tight">{title}</h3>
+              <p className="mt-4 text-lg leading-relaxed text-soft">{desc}</p>
+            </article>
+          ))}
+        </div>
       </Section>
 
       <Section id="about" title="Built by two engineers who believe training should make sense" muted>
         <p className="max-w-5xl text-soft">Quantum Motion was created by Mario and Alberto. We combine engineering thinking, years of training experience, AI tooling, and a supportive coaching style to help people stop guessing and start moving with confidence.</p>
+
+        <div className="mt-8 grid gap-6 lg:grid-cols-2">
+          {[{
+            name: 'Mario Sorgente',
+            role: 'Quantum Physics Engineer · Co-founder',
+            points: ['Around 20 years of training experience, including gymnastic roots.', 'Personal history with shoulder pain, ACL injury, and a broken elbow.', 'Focus: rebuild trust, adapt training, and create sustainable progress.'],
+          }, {
+            name: 'Alberto Negrini',
+            role: 'Engineer · Fitness Coach · Co-founder',
+            points: ['Structured and practical approach to training and progression.', 'Around 20 years of training across fighting, swimming, and skiing.', 'Focus: clear systems, realistic habits, and consistent coaching support.'],
+          }].map((person) => (
+            <article key={person.name} className="rounded-3xl border border-ink/10 bg-white p-7 shadow-soft">
+              <div className="mb-6 rounded-[2rem] border-2 border-dashed border-ink/15 bg-canvas p-10 text-center shadow-[0_16px_28px_rgba(43,39,38,0.25)]">
+                <p className="text-3xl font-semibold">Professional photo coming soon</p>
+                <p className="mt-3 text-lg text-soft">Space reserved for 4–5 premium photos.</p>
+              </div>
+              <h3 className="text-5xl font-semibold leading-tight">{person.name}</h3>
+              <p className="mt-2 text-soft">{person.role}</p>
+              <ul className="mt-5 list-disc space-y-2 pl-6 text-soft">
+                {person.points.map((point) => <li key={point}>{point}</li>)}
+              </ul>
+            </article>
+          ))}
+        </div>
       </Section>
 
       <Section id="free-program" title="Start with one free week" muted>
         <p className="max-w-4xl text-soft">No pressure. No complicated commitment. Start with a simple 7-day program designed to help you reconnect with your body, move better, and build momentum.</p>
+        <div className="mt-8 grid gap-6 md:grid-cols-2">
+          <ul className="space-y-2 text-soft">
+            <li>• Simple gym and mobility structure</li>
+            <li>• Pain-aware</li>
+            <li>• Remote support</li>
+          </ul>
+          <ul className="space-y-2 text-soft">
+            <li>• Beginner-friendly</li>
+            <li>• Confidence-focused</li>
+          </ul>
+        </div>
         <div className="mt-8"><ButtonLink href={freeProgramMailto}>Request the free 7-day program</ButtonLink></div>
       </Section>
 
