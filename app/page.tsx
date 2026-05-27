@@ -9,26 +9,32 @@ const freeProgramMailto =
 
 export default function Home() {
   return (
-    <main className="bg-[radial-gradient(circle_at_top,_#0e2538_0%,_#102f44_38%,_#f2f3f5_100%)]">
-      <header className="sticky top-0 z-20 border-b border-white/15 bg-[#0f2738]/80 text-white backdrop-blur">
+    <main className="bg-[#eef2f7]">
+      <header className="sticky top-0 z-30 border-b border-white/30 bg-[#0f2435]/85 text-white backdrop-blur-xl">
         <nav className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-6 py-4">
           <a href="#top" className="inline-flex items-center gap-3 text-lg font-semibold tracking-wide">
             <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#0d2231] text-sm font-bold">QM</span>
             <span>Quantum Motion</span>
           </a>
           <div className="flex flex-wrap items-center gap-2 text-sm sm:gap-6">
-            <a href="#method" className="hover:text-cyan-200">Method</a>
-            <a href="#about" className="hover:text-cyan-200">About</a>
-            <a href="#free-program" className="hover:text-cyan-200">Free Program</a>
-            <a href="#contact" className="hover:text-cyan-200">Contact</a>
+            <a href="#method" className="text-slate-100 hover:text-cyan-200">Method</a>
+            <a href="#about" className="text-slate-100 hover:text-cyan-200">About</a>
+            <a href="#free-program" className="text-slate-100 hover:text-cyan-200">Free Program</a>
+            <a href="#contact" className="text-slate-100 hover:text-cyan-200">Contact</a>
             <ButtonLink href="#free-program">Start free</ButtonLink>
           </div>
         </nav>
       </header>
 
-      <section id="top" className="px-6 pb-16 pt-14 text-white sm:pt-20">
-        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-2 lg:items-center">
-          <div className="animate-fadeInUp">
+      <section id="top" className="relative isolate overflow-hidden">
+        <div className="absolute inset-0">
+          <Image src={brandPhoto} alt="Quantum Motion brand visual" className="h-full w-full object-cover object-center" priority />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#07121d]/85 via-[#0b1d2b]/70 to-[#0f2a3f]/35" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(56,189,248,0.35),transparent_40%)]" />
+        </div>
+
+        <div className="relative mx-auto grid min-h-[82vh] max-w-6xl items-end gap-12 px-6 pb-14 pt-20 lg:grid-cols-[1.05fr_0.95fr]">
+          <div className="animate-fadeInUp rounded-3xl border border-white/20 bg-white/10 p-8 text-white shadow-2xl backdrop-blur-sm sm:p-10">
             <p className="mb-3 text-sm uppercase tracking-[0.2em] text-cyan-100">Remote gym & mobility coaching</p>
             <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Move better. Train smarter. Feel confident in your body again.</h1>
             <p className="mt-5 max-w-xl text-lg text-slate-100">Remote gym and mobility coaching for people who want to rebuild strength, reduce fear around movement, and create a body they can trust.</p>
@@ -37,10 +43,7 @@ export default function Home() {
               <ButtonLink href="https://instagram.com/tobeadded" variant="secondary">Message us on Instagram</ButtonLink>
             </div>
           </div>
-          <div className="relative overflow-hidden rounded-3xl border border-white/25 bg-white/10 p-4 shadow-2xl">
-            <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/30 via-transparent to-blue-600/30" />
-            <Image src={brandPhoto} alt="Quantum Motion brand visual" className="relative h-[420px] w-full rounded-2xl object-cover" priority />
-          </div>
+          <div className="hidden lg:block" />
         </div>
       </section>
 
@@ -66,7 +69,7 @@ export default function Home() {
       <Section id="about" title="Built by two engineers who believe training should make sense" muted>
         <p className="max-w-5xl text-soft">Quantum Motion was created by Mario and Alberto. We combine engineering thinking, years of training experience, AI tooling, and a supportive coaching style to help people stop guessing and start moving with confidence.</p>
 
-        <div className="mt-8 grid gap-6 lg:grid-cols-2">
+        <div className="mt-8 grid gap-8 lg:grid-cols-2">
           {[
             {
               name: 'Mario Sorgente',
@@ -83,14 +86,17 @@ export default function Home() {
               points: ['Structured and practical approach to training and progression.', 'Around 20 years of training across fighting, swimming, and skiing.', 'Focus: clear systems, realistic habits, and consistent coaching support.'],
             },
           ].map((person) => (
-            <article key={person.name} className="rounded-3xl border border-ink/10 bg-white p-7 shadow-soft">
-              <div className="mb-6 overflow-hidden rounded-[2rem] border border-slate-300/60 bg-gradient-to-br from-slate-100 to-slate-200 shadow-[0_16px_28px_rgba(43,39,38,0.18)]">
-                <Image src={person.photo} alt={person.photoAlt} className="h-[360px] w-full object-cover" />
+            <article key={person.name} className="overflow-hidden rounded-[2rem] border border-white/30 bg-white shadow-[0_24px_50px_rgba(9,27,40,0.18)]">
+              <div className="relative h-[460px] w-full">
+                <Image src={person.photo} alt={person.photoAlt} className="h-full w-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#08111a]/80 via-[#08111a]/30 to-transparent" />
+                <div className="absolute bottom-0 p-7 text-white">
+                  <h3 className="text-4xl font-semibold leading-tight">{person.name}</h3>
+                  <p className="mt-2 text-slate-100">{person.role}</p>
+                </div>
               </div>
-              <h3 className="text-5xl font-semibold leading-tight">{person.name}</h3>
-              <p className="mt-2 text-soft">{person.role}</p>
-              <ul className="mt-5 list-disc space-y-2 pl-6 text-soft">
-                {person.points.map((point) => <li key={point}>{point}</li>)}
+              <ul className="space-y-2 px-7 pb-8 pt-6 text-soft">
+                {person.points.map((point) => <li key={point}>• {point}</li>)}
               </ul>
             </article>
           ))}
