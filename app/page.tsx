@@ -9,41 +9,41 @@ const freeProgramMailto =
 
 export default function Home() {
   return (
-    <main className="bg-[#eef2f7]">
-      <header className="sticky top-0 z-30 border-b border-white/30 bg-[#0f2435]/85 text-white backdrop-blur-xl">
+    <main className="bg-[#f3f6fb] text-[#102030]">
+      <header className="sticky top-0 z-30 border-b border-[#d8e2ef] bg-[#f3f6fb]/85 backdrop-blur-xl">
         <nav className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-6 py-4">
-          <a href="#top" className="inline-flex items-center gap-3 text-lg font-semibold tracking-wide">
-            <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#0d2231] text-sm font-bold">QM</span>
+          <a href="#top" className="inline-flex items-center gap-3 text-lg font-semibold tracking-wide text-[#0c2439]">
+            <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#0f2f4a] text-white text-sm font-bold">QM</span>
             <span>Quantum Motion</span>
           </a>
           <div className="flex flex-wrap items-center gap-2 text-sm sm:gap-6">
-            <a href="#method" className="text-slate-100 hover:text-cyan-200">Method</a>
-            <a href="#about" className="text-slate-100 hover:text-cyan-200">About</a>
-            <a href="#free-program" className="text-slate-100 hover:text-cyan-200">Free Program</a>
-            <a href="#contact" className="text-slate-100 hover:text-cyan-200">Contact</a>
+            <a href="#method" className="text-[#38536b] hover:text-[#0f2f4a]">Method</a>
+            <a href="#about" className="text-[#38536b] hover:text-[#0f2f4a]">About</a>
+            <a href="#free-program" className="text-[#38536b] hover:text-[#0f2f4a]">Free Program</a>
+            <a href="#contact" className="text-[#38536b] hover:text-[#0f2f4a]">Contact</a>
             <ButtonLink href="#free-program">Start free</ButtonLink>
           </div>
         </nav>
       </header>
 
-      <section id="top" className="relative isolate overflow-hidden">
-        <div className="absolute inset-0">
-          <Image src={brandPhoto} alt="Quantum Motion brand visual" className="h-full w-full object-cover object-center" priority />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#07121d]/85 via-[#0b1d2b]/70 to-[#0f2a3f]/35" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(56,189,248,0.35),transparent_40%)]" />
-        </div>
-
-        <div className="relative mx-auto grid min-h-[82vh] max-w-6xl items-end gap-12 px-6 pb-14 pt-20 lg:grid-cols-[1.05fr_0.95fr]">
-          <div className="animate-fadeInUp rounded-3xl border border-white/20 bg-white/10 p-8 text-white shadow-2xl backdrop-blur-sm sm:p-10">
-            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-cyan-100">Remote gym & mobility coaching</p>
-            <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Move better. Train smarter. Feel confident in your body again.</h1>
-            <p className="mt-5 max-w-xl text-lg text-slate-100">Remote gym and mobility coaching for people who want to rebuild strength, reduce fear around movement, and create a body they can trust.</p>
+      <section id="top" className="px-6 pb-12 pt-10 sm:pt-14">
+        <div className="mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-[0.95fr_1.05fr]">
+          <div className="order-2 lg:order-1">
+            <p className="mb-4 text-sm uppercase tracking-[0.2em] text-[#5f7a93]">Remote gym & mobility coaching</p>
+            <h1 className="text-4xl font-semibold tracking-tight text-[#0c2439] sm:text-5xl">Move better. Train smarter. Feel confident in your body again.</h1>
+            <p className="mt-5 max-w-xl text-lg text-[#3a546d]">Remote gym and mobility coaching for people who want to rebuild strength, reduce fear around movement, and create a body they can trust.</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <ButtonLink href={freeProgramMailto}>Start with the free 7-day program</ButtonLink>
               <ButtonLink href="https://instagram.com/tobeadded" variant="secondary">Message us on Instagram</ButtonLink>
             </div>
           </div>
-          <div className="hidden lg:block" />
+
+          <div className="order-1 lg:order-2">
+            <div className="relative overflow-hidden rounded-[2.2rem] border border-white/80 shadow-[0_28px_55px_rgba(22,45,69,0.18)]">
+              <Image src={brandPhoto} alt="Quantum Motion brand visual" className="h-[58vh] min-h-[420px] w-full object-cover" priority />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0d2338]/18 via-transparent to-[#8ec5f8]/10" />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -68,8 +68,7 @@ export default function Home() {
 
       <Section id="about" title="Built by two engineers who believe training should make sense" muted>
         <p className="max-w-5xl text-soft">Quantum Motion was created by Mario and Alberto. We combine engineering thinking, years of training experience, AI tooling, and a supportive coaching style to help people stop guessing and start moving with confidence.</p>
-
-        <div className="mt-8 grid gap-8 lg:grid-cols-2">
+        <div className="mt-10 grid gap-8 lg:grid-cols-2">
           {[
             {
               name: 'Mario Sorgente',
@@ -86,18 +85,15 @@ export default function Home() {
               points: ['Structured and practical approach to training and progression.', 'Around 20 years of training across fighting, swimming, and skiing.', 'Focus: clear systems, realistic habits, and consistent coaching support.'],
             },
           ].map((person) => (
-            <article key={person.name} className="overflow-hidden rounded-[2rem] border border-white/30 bg-white shadow-[0_24px_50px_rgba(9,27,40,0.18)]">
-              <div className="relative h-[460px] w-full">
-                <Image src={person.photo} alt={person.photoAlt} className="h-full w-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#08111a]/80 via-[#08111a]/30 to-transparent" />
-                <div className="absolute bottom-0 p-7 text-white">
-                  <h3 className="text-4xl font-semibold leading-tight">{person.name}</h3>
-                  <p className="mt-2 text-slate-100">{person.role}</p>
-                </div>
+            <article key={person.name} className="overflow-hidden rounded-[2rem] border border-white bg-white shadow-[0_24px_45px_rgba(17,38,56,0.14)]">
+              <Image src={person.photo} alt={person.photoAlt} className="h-[520px] w-full object-cover" />
+              <div className="space-y-3 px-8 pb-8 pt-6">
+                <h3 className="text-4xl font-semibold leading-tight text-[#0d263d]">{person.name}</h3>
+                <p className="text-[#5a738a]">{person.role}</p>
+                <ul className="space-y-2 pt-2 text-soft">
+                  {person.points.map((point) => <li key={point}>• {point}</li>)}
+                </ul>
               </div>
-              <ul className="space-y-2 px-7 pb-8 pt-6 text-soft">
-                {person.points.map((point) => <li key={point}>• {point}</li>)}
-              </ul>
             </article>
           ))}
         </div>
@@ -106,34 +102,15 @@ export default function Home() {
       <Section id="free-program" title="Start with one free week" muted>
         <p className="max-w-4xl text-soft">No pressure. No complicated commitment. Start with a simple 7-day program designed to help you reconnect with your body, move better, and build momentum.</p>
         <div className="mt-8 grid gap-6 md:grid-cols-2">
-          <ul className="space-y-2 text-soft">
-            <li>• Simple gym and mobility structure</li>
-            <li>• Pain-aware</li>
-            <li>• Remote support</li>
-          </ul>
-          <ul className="space-y-2 text-soft">
-            <li>• Beginner-friendly</li>
-            <li>• Confidence-focused</li>
-          </ul>
+          <ul className="space-y-2 text-soft"><li>• Simple gym and mobility structure</li><li>• Pain-aware</li><li>• Remote support</li></ul>
+          <ul className="space-y-2 text-soft"><li>• Beginner-friendly</li><li>• Confidence-focused</li></ul>
         </div>
         <div className="mt-8"><ButtonLink href={freeProgramMailto}>Request the free 7-day program</ButtonLink></div>
       </Section>
 
-      <Section id="contact" title="Ready to feel strong, mobile, and confident again?">
-        <p className="text-soft">Send us a message and we’ll help you take the first step.</p>
-        <div className="mt-6 flex flex-wrap gap-3">
-          <ButtonLink href={freeProgramMailto}>Start with the free 7-day program</ButtonLink>
-          <ButtonLink href="mailto:mario.sorgente@gmail.com,alberto.negrini01@gmail.com" variant="secondary">Contact us by email</ButtonLink>
-        </div>
-      </Section>
+      <Section id="contact" title="Ready to feel strong, mobile, and confident again?"><p className="text-soft">Send us a message and we’ll help you take the first step.</p><div className="mt-6 flex flex-wrap gap-3"><ButtonLink href={freeProgramMailto}>Start with the free 7-day program</ButtonLink><ButtonLink href="mailto:mario.sorgente@gmail.com,alberto.negrini01@gmail.com" variant="secondary">Contact us by email</ButtonLink></div></Section>
 
-      <footer className="border-t border-ink/10 px-6 py-10 text-center text-sm text-soft">
-        <p className="font-semibold text-ink">Quantum Motion</p>
-        <p>Remote gym and mobility coaching</p>
-        <p className="mt-4">
-          <a href="/privacy" className="underline">Privacy Policy</a> · <a href="/terms" className="underline">Terms & Conditions</a>
-        </p>
-      </footer>
+      <footer className="border-t border-ink/10 px-6 py-10 text-center text-sm text-soft"><p className="font-semibold text-ink">Quantum Motion</p><p>Remote gym and mobility coaching</p><p className="mt-4"><a href="/privacy" className="underline">Privacy Policy</a> · <a href="/terms" className="underline">Terms & Conditions</a></p></footer>
     </main>
   );
 }
