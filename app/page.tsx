@@ -9,10 +9,10 @@ const freeProgramMailto =
 
 export default function Home() {
   return (
-    <main className="bg-[#f3f6fb] text-[#102030]">
-      <header className="sticky top-0 z-30 border-b border-[#d8e2ef] bg-[#f3f6fb]/85 backdrop-blur-xl">
+    <main className="bg-[linear-gradient(180deg,#e8eef5_0%,#eff4f8_38%,#f7f9fb_100%)] text-[#0f2336]">
+      <header className="sticky top-0 z-30 border-b border-[#cfdbe7] bg-[#eaf1f7]/88 backdrop-blur-xl">
         <nav className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-6 py-4">
-          <a href="#top" className="inline-flex items-center gap-3 text-lg font-semibold tracking-wide text-[#0c2439]">
+          <a href="#top" className="inline-flex items-center gap-3 text-lg font-semibold tracking-[0.06em] text-[#0c2439] font-heading">
             <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#0f2f4a] text-white text-sm font-bold">QM</span>
             <span>Quantum Motion</span>
           </a>
@@ -30,8 +30,8 @@ export default function Home() {
         <div className="mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="order-2 lg:order-1">
             <p className="mb-4 text-sm uppercase tracking-[0.2em] text-[#5f7a93]">Remote gym & mobility coaching</p>
-            <h1 className="text-4xl font-semibold tracking-tight text-[#0c2439] sm:text-5xl">Move better. Train smarter. Feel confident in your body again.</h1>
-            <p className="mt-5 max-w-xl text-lg text-[#3a546d]">Remote gym and mobility coaching for people who want to rebuild strength, reduce fear around movement, and create a body they can trust.</p>
+            <h1 className="font-heading text-5xl font-semibold uppercase leading-[0.95] tracking-[0.03em] text-[#092038] sm:text-6xl">Move better. Train smarter. Feel confident in your body again.</h1>
+            <p className="mt-5 max-w-xl text-lg text-[#324a61]">Remote gym and mobility coaching for people who want to rebuild strength, reduce fear around movement, and create a body they can trust.</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <ButtonLink href={freeProgramMailto}>Start with the free 7-day program</ButtonLink>
               <ButtonLink href="https://instagram.com/tobeadded" variant="secondary">Message us on Instagram</ButtonLink>
@@ -39,9 +39,9 @@ export default function Home() {
           </div>
 
           <div className="order-1 lg:order-2">
-            <div className="relative overflow-hidden rounded-[2.2rem] border border-white/80 shadow-[0_28px_55px_rgba(22,45,69,0.18)]">
+            <div className="relative overflow-hidden rounded-[2.2rem] border border-white/90 shadow-[0_28px_65px_rgba(16,44,72,0.22)]">
               <Image src={brandPhoto} alt="Quantum Motion brand visual" className="h-[58vh] min-h-[420px] w-full object-cover" priority />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0d2338]/18 via-transparent to-[#8ec5f8]/10" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#102c46]/26 via-transparent to-[#9fd1ff]/14" />
             </div>
           </div>
         </div>
@@ -59,7 +59,7 @@ export default function Home() {
             ['3. Continue with 1:1 coaching', 'If it feels right, we build a personalized remote coaching plan around your body, goals, and lifestyle.'],
           ].map(([title, desc]) => (
             <article key={title} className="rounded-2xl border border-ink/10 bg-white p-7 shadow-soft">
-              <h3 className="text-[2rem] font-semibold leading-tight">{title}</h3>
+              <h3 className="font-heading text-[2.15rem] font-semibold uppercase leading-tight tracking-[0.02em] text-[#0b2238]">{title}</h3>
               <p className="mt-4 text-lg leading-relaxed text-soft">{desc}</p>
             </article>
           ))}
@@ -85,11 +85,11 @@ export default function Home() {
               points: ['Structured and practical approach to training and progression.', 'Around 20 years of training across fighting, swimming, and skiing.', 'Focus: clear systems, realistic habits, and consistent coaching support.'],
             },
           ].map((person) => (
-            <article key={person.name} className="overflow-hidden rounded-[2rem] border border-white bg-white shadow-[0_24px_45px_rgba(17,38,56,0.14)]">
+            <article key={person.name} className="overflow-hidden rounded-[2rem] border border-white/90 bg-white/95 shadow-[0_26px_52px_rgba(15,38,58,0.18)]">
               <Image src={person.photo} alt={person.photoAlt} className="h-[520px] w-full object-cover" />
               <div className="space-y-3 px-8 pb-8 pt-6">
-                <h3 className="text-4xl font-semibold leading-tight text-[#0d263d]">{person.name}</h3>
-                <p className="text-[#5a738a]">{person.role}</p>
+                <h3 className="font-heading text-5xl font-semibold uppercase leading-[0.95] tracking-[0.02em] text-[#0c263e]">{person.name}</h3>
+                <p className="text-[#4a637a]">{person.role}</p>
                 <ul className="space-y-2 pt-2 text-soft">
                   {person.points.map((point) => <li key={point}>• {point}</li>)}
                 </ul>
