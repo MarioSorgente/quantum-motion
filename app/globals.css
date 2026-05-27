@@ -8,4 +8,10 @@ html {
 
 body {
   @apply bg-canvas text-ink antialiased;
+  font-family: Inter, Avenir Next, Avenir, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3, h4, .font-heading {
+  font-family: Bahnschrift, 'DIN Alternate', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  letter-spacing: 0.01em;
 }
