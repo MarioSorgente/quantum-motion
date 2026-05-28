@@ -9,13 +9,13 @@ type ButtonLinkProps = {
 export function ButtonLink({ href, children, variant = 'primary' }: ButtonLinkProps) {
   const styles =
     variant === 'primary'
-      ? 'bg-ink text-canvas hover:-translate-y-0.5 hover:bg-[#1f1d1b]'
-      : 'border border-ink/20 bg-white/70 text-ink hover:-translate-y-0.5 hover:bg-white';
+      ? 'bg-[#113a5c] text-white hover:-translate-y-0.5 hover:bg-[#0d2f4b]'
+      : 'border border-[#aac0d5] bg-[#f4f8fd] text-[#113a5c] hover:-translate-y-0.5 hover:bg-white';
 
   return (
     <a
       href={href}
-      className={`inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium transition-all duration-300 ${styles}`}
+      className={`inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold transition-all duration-300 sm:px-6 ${styles}`}
     >
       {children}
     </a>
@@ -31,24 +31,11 @@ type SectionProps = {
 
 export function Section({ id, title, children, muted = false }: SectionProps) {
   return (
-    <section id={id} className="px-6 py-16 sm:py-20">
-      <div className={`mx-auto max-w-6xl rounded-3xl p-8 sm:p-12 ${muted ? 'bg-section/75' : ''}`}>
-        <h2 className="mb-6 text-3xl font-semibold tracking-tight sm:text-4xl">{title}</h2>
+    <section id={id} className="px-5 py-12 sm:px-6 sm:py-16 lg:py-20">
+      <div className={`mx-auto max-w-6xl ${muted ? 'rounded-3xl border border-[#d4deea] bg-[#eaf0f8] p-6 sm:p-10 lg:p-12' : ''}`}>
+        <h2 className="mb-5 text-3xl font-semibold tracking-tight text-ink sm:text-[2.2rem]">{title}</h2>
         {children}
       </div>
     </section>
-  );
-}
-
-export function PlaceholderImage({ label, className = '' }: { label: string; className?: string }) {
-  return (
-    <div
-      role="img"
-      aria-label={label}
-      className={`rounded-3xl border border-dashed border-ink/25 bg-gradient-to-br from-white to-section/60 p-10 text-center shadow-soft ${className}`}
-    >
-      <p className="text-base font-medium text-ink">Professional photo coming soon</p>
-      <p className="mt-2 text-sm text-soft">Space reserved for 4–5 premium photos.</p>
-    </div>
   );
 }
