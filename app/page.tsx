@@ -5,6 +5,7 @@ import marioPhoto from '@/photos/0527(4).png';
 import albertoPhoto from '@/photos/0527(5).png';
 
 const intakeFormUrl = 'https://fitness-agents.vercel.app/intake';
+const instagramUrl = 'https://www.instagram.com/quantumotion.coach/';
 
 export default function Home() {
   return (
@@ -33,7 +34,7 @@ export default function Home() {
             <p className="mt-4 max-w-xl text-base leading-relaxed text-soft sm:text-lg">Online coaching for people who want to rebuild strength, reduce fear around movement, and create a body they can trust.</p>
             <div className="mt-7 flex flex-wrap gap-3">
               <ButtonLink href={intakeFormUrl}>Start with the free 7-day program</ButtonLink>
-              <ButtonLink href="https://instagram.com/tobeadded" variant="secondary">Message us on Instagram</ButtonLink>
+              <ButtonLink href={instagramUrl} variant="secondary">Message us on Instagram</ButtonLink>
             </div>
           </div>
 
