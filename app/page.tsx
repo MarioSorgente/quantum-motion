@@ -4,8 +4,7 @@ import brandPhoto from '@/photos/0527(2).png';
 import marioPhoto from '@/photos/0527(4).png';
 import albertoPhoto from '@/photos/0527(5).png';
 
-const freeProgramMailto =
-  'mailto:mario.sorgente@gmail.com?cc=alberto.negrini01@gmail.com&subject=Quantum%20Motion%20%E2%80%94%20Free%207-day%20program&body=Hi%20Mario%20and%20Alberto%2C%20I%E2%80%99d%20like%20to%20start%20with%20the%20free%207-day%20Quantum%20Motion%20program.';
+const intakeFormUrl = 'https://fitness-agents.vercel.app/intake';
 
 export default function Home() {
   return (
@@ -21,7 +20,7 @@ export default function Home() {
             <a href="#about" className="text-soft hover:text-ink">About</a>
             <a href="#free-program" className="text-soft hover:text-ink">Free Program</a>
             <a href="#contact" className="text-soft hover:text-ink">Contact</a>
-            <ButtonLink href="#free-program">Start free</ButtonLink>
+            <ButtonLink href={intakeFormUrl}>Start free</ButtonLink>
           </div>
         </nav>
       </header>
@@ -33,7 +32,7 @@ export default function Home() {
             <h1 className="text-[2rem] font-semibold tracking-tight text-ink sm:text-[2.85rem]">Move better. Train smarter. Feel confident in your body again.</h1>
             <p className="mt-4 max-w-xl text-base leading-relaxed text-soft sm:text-lg">Online coaching for people who want to rebuild strength, reduce fear around movement, and create a body they can trust.</p>
             <div className="mt-7 flex flex-wrap gap-3">
-              <ButtonLink href={freeProgramMailto}>Start with the free 7-day program</ButtonLink>
+              <ButtonLink href={intakeFormUrl}>Start with the free 7-day program</ButtonLink>
               <ButtonLink href="https://instagram.com/tobeadded" variant="secondary">Message us on Instagram</ButtonLink>
             </div>
           </div>
@@ -121,7 +120,7 @@ export default function Home() {
             <div className="rounded-2xl border border-white/20 bg-white/10 p-5 sm:p-6">
               <p className="text-sm text-[#cfe2f3]">Take the first step with a simple plan and direct support.</p>
               <div className="mt-4 flex flex-col gap-3">
-                <ButtonLink href={freeProgramMailto}>Request the free 7-day program</ButtonLink>
+                <ButtonLink href={intakeFormUrl}>Request the free 7-day program</ButtonLink>
                 <a className="text-sm text-[#dceaf7] underline underline-offset-4" href="mailto:mario.sorgente@gmail.com,alberto.negrini01@gmail.com">Prefer email? Contact us directly</a>
               </div>
             </div>
@@ -129,7 +128,7 @@ export default function Home() {
         </div>
       </section>
 
-      <Section id="contact" title="Ready to feel strong, mobile, and confident again?"><p className="text-soft">Send us a message and we’ll help you take the first step.</p><div className="mt-6 flex flex-wrap gap-3"><ButtonLink href={freeProgramMailto}>Start with the free 7-day program</ButtonLink><ButtonLink href="mailto:mario.sorgente@gmail.com,alberto.negrini01@gmail.com" variant="secondary">Contact us by email</ButtonLink></div></Section>
+      <Section id="contact" title="Ready to feel strong, mobile, and confident again?"><p className="text-soft">Send us a message and we’ll help you take the first step.</p><div className="mt-6 flex flex-wrap gap-3"><ButtonLink href={intakeFormUrl}>Start with the free 7-day program</ButtonLink><ButtonLink href="mailto:mario.sorgente@gmail.com,alberto.negrini01@gmail.com" variant="secondary">Contact us by email</ButtonLink></div></Section>
 
       <footer className="border-t border-[#d5e0ec] px-5 py-10 text-center text-sm text-soft sm:px-6"><p className="font-semibold text-ink">Quantum Motion</p><p>Online coaching for strength and mobility</p><p className="mt-4"><a href="/privacy" className="underline">Privacy Policy</a> · <a href="/terms" className="underline">Terms & Conditions</a></p></footer>
     </main>
